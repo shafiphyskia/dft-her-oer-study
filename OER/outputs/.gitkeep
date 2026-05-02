@@ -1,0 +1,12 @@
+# Outputs directory
+#
+# Place VASP output files here after a completed calculation, e.g.:
+#   OUTCAR       — main output (energies, forces, timings)
+#   CONTCAR      — final geometry (relaxed positions)
+#   DOSCAR       — density of states data
+#   EIGENVAL     — band energies
+#   vasprun.xml  — full structured output (parseable by ASE / pymatgen)
+#   CHGCAR       — charge density
+#
+# This directory is tracked in git (via .gitkeep) but its contents are
+# excluded from version control by the top-level .gitignore.

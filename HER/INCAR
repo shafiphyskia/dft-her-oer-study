@@ -1,0 +1,45 @@
+################################################################################
+# INCAR for HER study — MoS2 monolayer geometry optimisation
+# VASP 5.4+  |  GGA-PBE  |  PAW pseudopotentials
+################################################################################
+
+SYSTEM = HER_DFT (MoS2)
+
+# --- Electronic structure ---
+ENCUT  = 450        # plane-wave cutoff energy (eV)
+GGA    = PE         # PBE exchange-correlation functional
+PREC   = Accurate   # precision mode
+ALGO   = Fast       # RMM-DIIS + Davidson
+
+# --- Smearing ---
+ISMEAR =  0         # Gaussian smearing
+SIGMA  =  0.05      # smearing width (eV); small value for semiconductor/insulator
+
+# --- Convergence ---
+EDIFF  = 1E-5       # electronic convergence criterion (eV)
+EDIFFG = -0.02      # ionic convergence: all forces < 0.02 eV/Å
+
+# --- Ionic relaxation ---
+IBRION =  2         # conjugate-gradient algorithm
+NSW    = 50         # maximum number of ionic steps
+POTIM  =  0.3       # initial ionic step size (Å)
+ISIF   =  2         # relax ions only (keep cell shape & volume fixed)
+
+# --- Spin polarisation ---
+ISPIN  =  2         # spin-polarised calculation
+MAGMOM = 9*0.6 18*0.0  # initial magnetic moments: 9 Mo (0.6 µB each), 18 S (0.0 µB)
+
+# --- DOS / charge density ---
+LORBIT = 11         # write PROCAR + projected DOS
+LWAVE  = .FALSE.    # do not write WAVECAR (saves disk space)
+LCHARG = .TRUE.     # write CHGCAR for post-processing
+
+# --- Parallelisation ---
+NPAR   =  4         # number of bands treated in parallel (adjust to your core count)
+
+# --- Dipole correction (important for slabs with a net dipole) ---
+LDIPOL = .TRUE.
+IDIPOL =  3         # dipole correction along z-axis (slab normal)
+
+# --- van der Waals correction (DFT-D3) ---
+IVDW   =  11        # DFT-D3 correction with Becke-Johnson damping

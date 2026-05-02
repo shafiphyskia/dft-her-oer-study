@@ -1,0 +1,19 @@
+# POTCAR — PAW-PBE pseudopotentials for Ir and O
+#
+# IMPORTANT: POTCAR files are LICENSED by the VASP group and cannot be
+# redistributed.  This file is a PLACEHOLDER only.
+#
+# To generate a valid POTCAR for this calculation, concatenate the PAW-PBE
+# pseudopotentials for Ir and O in the order they appear in POSCAR:
+#
+#   cat $VASP_PP_PATH/potpaw_PBE/Ir/POTCAR \
+#       $VASP_PP_PATH/potpaw_PBE/O/POTCAR  \
+#       > OER/POTCAR
+#
+# Recommended VASP PAW-PBE datasets:
+#   Ir    — Ir_pv PAW-PBE (includes 5p semi-core; ENMAX ~ 175.587 eV)
+#   O     — standard O PAW-PBE  (ENMAX ~ 400.000 eV)
+#
+# The ENCUT in INCAR (500 eV) exceeds the recommended ENMAX values above,
+# providing well-converged plane-wave energies for the IrO2 system.
+PLACEHOLDER — replace with real POTCAR before running VASP
