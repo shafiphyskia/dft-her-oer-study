@@ -1,0 +1,19 @@
+# POTCAR — PAW-PBE pseudopotentials for Mo and S
+#
+# IMPORTANT: POTCAR files are LICENSED by the VASP group and cannot be
+# redistributed.  This file is a PLACEHOLDER only.
+#
+# To generate a valid POTCAR for this calculation, concatenate the PAW-PBE
+# pseudopotentials for Mo and S in the order they appear in POSCAR:
+#
+#   cat $VASP_PP_PATH/potpaw_PBE/Mo/POTCAR \
+#       $VASP_PP_PATH/potpaw_PBE/S/POTCAR \
+#       > HER/POTCAR
+#
+# Recommended VASP PAW-PBE datasets:
+#   Mo    — standard Mo PAW-PBE  (ENMAX ~ 224.887 eV)
+#   S     — standard S  PAW-PBE  (ENMAX ~ 280.000 eV)
+#
+# The ENCUT in INCAR (450 eV) exceeds the recommended ENMAX values above,
+# providing well-converged plane-wave energies for the MoS2 system.
+PLACEHOLDER — replace with real POTCAR before running VASP

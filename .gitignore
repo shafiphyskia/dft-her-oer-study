@@ -1,0 +1,32 @@
+# VASP binary output files (large, machine-specific)
+WAVECAR
+CHG
+CHGCAR
+PROCAR
+EIGENVAL
+IBZKPT
+REPORT
+PCDAT
+XDATCAR
+
+# VASP output text files generated during a run
+# (keep OUTCAR and vasprun.xml — they are useful for analysis)
+vasprun.xml.bak
+
+# ASE / pymatgen cache
+*.pyc
+__pycache__/
+.ipynb_checkpoints/
+
+# Conda environment (installed locally, not committed)
+/env/
+/.conda/
+
+# Generated figures (reproducible from notebooks)
+*.png
+*.pdf
+*.svg
+
+# OS artefacts
+.DS_Store
+Thumbs.db

@@ -1,0 +1,21 @@
+name: dft-env
+channels:
+  - conda-forge
+  - defaults
+dependencies:
+  - python=3.8
+  - numpy>=1.21
+  - matplotlib>=3.4
+  - jupyterlab>=3.0
+  - notebook>=6.4
+  - pandas>=1.3
+  - scipy>=1.7
+  # Atomistic Simulation Environment
+  - ase>=3.22
+  # Crystal structure / DFT output analysis
+  - pymatgen>=2022.0.0
+  # Visualisation extras
+  - ipympl              # interactive matplotlib in Jupyter
+  - nglview             # 3-D structure viewer in Jupyter
+  - pip:
+    - vaspkit           # optional: VASPKIT post-processing helper (pip only)

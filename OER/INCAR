@@ -1,0 +1,53 @@
+################################################################################
+# INCAR for OER study — IrO2 (110) slab geometry optimisation & adsorption
+# VASP 5.4+  |  GGA-PBE  |  PAW pseudopotentials
+################################################################################
+
+SYSTEM = OER_DFT (IrO2_110)
+
+# --- Electronic structure ---
+ENCUT  = 500        # plane-wave cutoff energy (eV)
+GGA    = PE         # PBE exchange-correlation functional
+PREC   = Accurate   # precision mode
+ALGO   = All        # Davidson + RMM-DIIS (more robust for metals/oxides)
+
+# --- Smearing ---
+ISMEAR =  0         # Gaussian smearing (appropriate for oxide)
+SIGMA  =  0.05      # smearing width (eV)
+
+# --- Convergence ---
+EDIFF  = 1E-5       # electronic convergence criterion (eV)
+EDIFFG = -0.02      # ionic convergence: all forces < 0.02 eV/Å
+
+# --- Ionic relaxation ---
+IBRION =  2         # conjugate-gradient algorithm
+NSW    = 100        # maximum number of ionic steps (more for oxide surfaces)
+POTIM  =  0.2       # conservative step size for oxide
+ISIF   =  2         # relax ions only
+
+# --- Spin polarisation ---
+ISPIN  =  2         # spin-polarised calculation
+MAGMOM = 4*1.0 8*0.0   # initial magnetic moments: 4 Ir (1.0 µB), 8 O (0.0 µB)
+
+# --- Hubbard U correction (optional; comment out for plain PBE) ---
+# LDAU   = .TRUE.
+# LDAUTYPE = 2
+# LDAUL  = -1  2     # no U on O (l=-1), U on Ir d-states (l=2)
+# LDAUU  =  0  2.0   # U_eff = 2.0 eV for Ir
+# LDAUJ  =  0  0.0
+# LDAUPRINT = 2
+
+# --- DOS / charge density ---
+LORBIT = 11         # write PROCAR + projected DOS
+LWAVE  = .FALSE.
+LCHARG = .TRUE.
+
+# --- Parallelisation ---
+NPAR   =  4
+
+# --- Dipole correction ---
+LDIPOL = .TRUE.
+IDIPOL =  3         # along z-axis (slab normal)
+
+# --- van der Waals correction ---
+IVDW   =  11        # DFT-D3 with Becke-Johnson damping
